@@ -1,20 +1,15 @@
-var orm = require("../config/orm");
+// Burger models
 
-var burger = {
-  all: function(cb) {
-    orm.all("burgers", function(res) {
-      cb(res);
-    });
-  },
-  create: function(name, cb) {
-    orm.create("burgers", ["burger_name", "devoured"], [name, false], cb);
-  },
-  update: function(id, cb) {
-    var condition = "id=" + id;
-    orm.update("burgers", {
-      devoured: true
-    }, condition, cb);
-  }
+// The burger has a burger_name attribute of type DataTypes.String
+// and a devoured attribute that is false by default
+
+module.exports = function(sequelize, DataTypes) {
+  var Burger = sequelize.define("Burger", {
+    burger_name: DataTypes.STRING,
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
+  });
+  return Burger;
 };
-
-module.exports = burger;

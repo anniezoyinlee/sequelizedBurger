@@ -3,8 +3,9 @@
     "username": "root",
     "password": "root",
     "database": "burger_sequelize_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "host": "localhost",
+    "dialect": "mysql",
+    "PORT": 3306
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",

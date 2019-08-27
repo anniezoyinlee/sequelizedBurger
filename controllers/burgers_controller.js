@@ -10,14 +10,15 @@ router.get("/", function (req, res) {
 router.get("/burgers", function (req, res) {
   db.Burger.findAll()
     .then(function (dbBurger) {
+      console.log("Getting burgers")
       console.log(dbBurger);
-      const hbsObject = { burger: dbBurger };
+      const hbsObject = { burgers: dbBurger };
       return res.render("index", hbsObject);
     });
 });
 
 router.post("/burgers/create", function (req, res) {
-  burger.create({
+  db.Burger.create({
     burger_name: req.body.burger_name
   })
     .then(function (dbBurger) {

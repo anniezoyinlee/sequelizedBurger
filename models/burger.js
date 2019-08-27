@@ -5,7 +5,17 @@ module.exports = function(sequelize, DataTypes) {
     devoured: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
+    },
+    createdAt:{
+      allowNull:true,
+      type: DataTypes.DATE
+    },
+    updatedAt:{
+      allowNull:true,
+      type: DataTypes.DATE
     }
-  });
+  },
+
+  );
   return Burger;
 };

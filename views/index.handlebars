@@ -7,16 +7,19 @@
 		<div class="col-sm-6 text-center" class="task">
 			<div class="row">
 			  {{#each burgers}}
-			  	{{#unless this.devoured}}
+			  <script text="text/javascript">
+			  
+			  </script>
+			  	{{#unless this.dataValues.devoured}}
 				<div class="col-sm-9 text-center">
-					<pre>{{this.id}}. {{this.burger_name}}
+					<pre>{{this.dataValues.id}}. {{this.dataValues.burger_name}}
 					</pre>
 				  		<!-- {{this.Date}} -->
 				</div>
 				<div class="col-sm-3 text-center">
 
 					<form class="devour-form" class="button-size">
-						<input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
+						<input input type="hidden" class="burger_id" type="text" value={{this.dataValues.id}}><br>
 						<button type="submit" class="btn btn-default">Devour it!</button>
 					</form>
 				</div>
@@ -26,8 +29,8 @@
 		</div>
 		<div class="col-sm-6 text-center" class="task">
 			  {{#each burgers}}
-			  	{{#if this.devoured}}
-			  		<input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+			  	{{#if this.dataValue.devoured}}
+			  		<input class="form-control" type="text" placeholder="{{this.dataValue.id}} . {{this.dataValue.burger_name}}" readonly>
 				{{/if}}
 			  {{/each}}
 		</div>
